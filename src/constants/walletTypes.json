@@ -1,0 +1,14 @@
+[
+  {
+    "id": "0",
+    "walletType": "basic",
+    "walletTypeName": "Basic Wallet",
+    "helperText": "A wallet which you manually input your transactions"
+  },
+  {
+    "id": "1",
+    "walletType": "goal",
+    "walletTypeName": "Goal Wallet",
+    "helperText": "A wallet which you can manually note all your savings"
+  }
+]

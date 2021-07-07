@@ -1,0 +1,513 @@
+{
+  "Expense": [
+    {
+      "id": "1",
+      "parentId": "0",
+      "name": "Food & Beverage",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "food beverage" }
+    },
+    {
+      "id": "2",
+      "parentId": "1",
+      "name": "Restaurants",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "restaurants" }
+    },
+    {
+      "id": "3",
+      "parentId": "1",
+      "name": "Cafe",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "cafe" }
+    },
+    {
+      "id": "4",
+      "parentId": "1",
+      "name": "Groceries",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "groceries" }
+    },
+    {
+      "id": "5",
+      "parentId": "0",
+      "name": "Bills & Utilities",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "bills utilities" }
+    },
+    {
+      "id": "6",
+      "parentId": "5",
+      "name": "Phone",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "phone" }
+    },
+    {
+      "id": "7",
+      "parentId": "5",
+      "name": "Water",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "water" }
+    },
+    {
+      "id": "8",
+      "parentId": "5",
+      "name": "Electricity",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "electricity" }
+    },
+    {
+      "id": "9",
+      "parentId": "5",
+      "name": "Gas",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "gas" }
+    },
+    {
+      "id": "10",
+      "parentId": "5",
+      "name": "Television",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "television" }
+    },
+    {
+      "id": "11",
+      "parentId": "5",
+      "name": "Internet",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "internet" }
+    },
+    {
+      "id": "12",
+      "parentId": "5",
+      "name": "Rentals",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "rentals" }
+    },
+    {
+      "id": "13",
+      "parentId": "0",
+      "name": "Transportation",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "transportation" }
+    },
+    {
+      "id": "14",
+      "parentId": "13",
+      "name": "Taxi & Local Travel",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "taxi local travel" }
+    },
+    {
+      "id": "15",
+      "parentId": "13",
+      "name": "Parking & Toll Fees",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "parking toll fees" }
+    },
+    {
+      "id": "16",
+      "parentId": "13",
+      "name": "Fuel",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "fuel" }
+    },
+    {
+      "id": "17",
+      "parentId": "13",
+      "name": "Maintenance & Vehicle Insurance",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "maintenance vehicle insurance" }
+    },
+    {
+      "id": "18",
+      "parentId": "0",
+      "name": "Shopping",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "shopping" }
+    },
+    {
+      "id": "19",
+      "parentId": "18",
+      "name": "Clothing",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "clothing" }
+    },
+    {
+      "id": "20",
+      "parentId": "18",
+      "name": "Footwear",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "footwear" }
+    },
+    {
+      "id": "21",
+      "parentId": "18",
+      "name": "Accessories",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "accessories" }
+    },
+    {
+      "id": "22",
+      "parentId": "18",
+      "name": "Electronics",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "electronics" }
+    },
+    {
+      "id": "23",
+      "parentId": "0",
+      "name": "Friends & Lover",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "friends lover" }
+    },
+    {
+      "id": "24",
+      "parentId": "0",
+      "name": "Entertainment",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "entertainment" }
+    },
+    {
+      "id": "25",
+      "parentId": "24",
+      "name": "Movies",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "movies" }
+    },
+    {
+      "id": "26",
+      "parentId": "24",
+      "name": "Games",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "games" }
+    },
+    {
+      "id": "27",
+      "parentId": "0",
+      "name": "Travel",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "travel" }
+    },
+    {
+      "id": "28",
+      "parentId": "0",
+      "name": "Health & Fitness",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "health fitness" }
+    },
+    {
+      "id": "29",
+      "parentId": "28",
+      "name": "Sports",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "sports" }
+    },
+    {
+      "id": "30",
+      "parentId": "28",
+      "name": "Doctor",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "doctor" }
+    },
+    {
+      "id": "31",
+      "parentId": "28",
+      "name": "Pharmacy",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "pharmacy" }
+    },
+    {
+      "id": "32",
+      "parentId": "28",
+      "name": "Personal Care",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "personal care" }
+    },
+    {
+      "id": "33",
+      "parentId": "0",
+      "name": "Gifts & Donations",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "gifts donations" }
+    },
+    {
+      "id": "34",
+      "parentId": "33",
+      "name": "Marriage",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "marriage" }
+    },
+    {
+      "id": "35",
+      "parentId": "33",
+      "name": "Funeral",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "funeral" }
+    },
+    {
+      "id": "36",
+      "parentId": "33",
+      "name": "Charity",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "charity" }
+    },
+    {
+      "id": "37",
+      "parentId": "0",
+      "name": "Family",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "family" }
+    },
+    {
+      "id": "38",
+      "parentId": "37",
+      "name": "Children & Babies",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "children babies" }
+    },
+    {
+      "id": "39",
+      "parentId": "37",
+      "name": "Home Improvement",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "home improvement" }
+    },
+    {
+      "id": "40",
+      "parentId": "37",
+      "name": "Home Services",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "home services" }
+    },
+    {
+      "id": "41",
+      "parentId": "37",
+      "name": "Pets",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "pets" }
+    },
+
+    {
+      "id": "42",
+      "parentId": "0",
+      "name": "Education",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "education" }
+    },
+    {
+      "id": "43",
+      "parentId": "0",
+      "name": "Books",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "books" }
+    },
+    {
+      "id": "44",
+      "parentId": "0",
+      "name": "Investment",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "investment" }
+    },
+    {
+      "id": "45",
+      "parentId": "0",
+      "name": "Business",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "business" }
+    },
+    {
+      "id": "46",
+      "parentId": "0",
+      "name": "Insurances",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "insurances" }
+    },
+    {
+      "id": "47",
+      "parentId": "0",
+      "name": "Fees & Charges",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "fees charges" }
+    },
+    {
+      "id": "48",
+      "parentId": "0",
+      "name": "Withdrawal",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "withdrawal" }
+    },
+    {
+      "id": "49",
+      "parentId": "48",
+      "name": "To Savings",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "to savings" }
+    },
+    {
+      "id": "50",
+      "parentId": "48",
+      "name": "Cashback",
+      "level": "2",
+      "children": null,
+      "icon": { "name": "cashback" }
+    },
+    {
+      "id": "51",
+      "parentId": "0",
+      "name": "Others",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "others" }
+    },
+    {
+      "id": "52",
+      "parentId": "0",
+      "name": "Trips",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "trips" }
+    }
+  ],
+  "Income": [
+    {
+      "id": "1",
+      "parentId": "0",
+      "name": "Award",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "award" }
+    },
+    {
+      "id": "2",
+      "parentId": "0",
+      "name": "Interest Money",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "interest money" }
+    },
+    {
+      "id": "3",
+      "parentId": "0",
+      "name": "Salary",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "salary" }
+    },
+    {
+      "id": "4",
+      "parentId": "0",
+      "name": "Gifts",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "gifts" }
+    },
+    {
+      "id": "5",
+      "parentId": "0",
+      "name": "Selling",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "selling" }
+    },
+    {
+      "id": "6",
+      "parentId": "0",
+      "name": "Others",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "others income" }
+    },
+    {
+      "id": "7",
+      "parentId": "0",
+      "name": "Savings",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "savings" }
+    }
+  ],
+  "Debt/Loan": [
+    {
+      "id": "1",
+      "parentId": "0",
+      "name": "Loan",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "loan" }
+    },
+    {
+      "id": "2",
+      "parentId": "0",
+      "name": "Repayment",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "repayment" }
+    },
+    {
+      "id": "3",
+      "parentId": "0",
+      "name": "Debt",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "debt" }
+    },
+    {
+      "id": "4",
+      "parentId": "0",
+      "name": "Debt collection",
+      "level": "1",
+      "children": null,
+      "icon": { "name": "debt collection" }
+    }
+  ]
+}

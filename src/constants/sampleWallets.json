@@ -1,0 +1,90 @@
+[
+  {
+    "type": "basic",
+    "walletIcon": {
+      "aliasName": "",
+      "iconName": "icon_0",
+      "iconPath": "icons/icon.png",
+      "id": "60b8899af1f6b443bc5af9c1",
+      "index": 149
+    },
+    "currency": {
+      "flag": "INR",
+      "symbol": "₹",
+      "name": "Indian Rupee",
+      "code": "INR"
+    },
+    "openBalance": 0,
+    "enableNotification": false,
+    "excludeFromTotal": false,
+    "walletName": "Cash",
+    "categories": "global",
+    "archived": false
+  },
+  {
+    "type": "basic",
+    "walletIcon": {
+      "aliasName": "",
+      "iconName": "icon_0",
+      "iconPath": "icons/icon.png",
+      "id": "60b8899af1f6b443bc5af9c1",
+      "index": 149
+    },
+    "currency": {
+      "flag": "INR",
+      "symbol": "₹",
+      "name": "Indian Rupee",
+      "code": "INR"
+    },
+    "openBalance": 1000,
+    "enableNotification": false,
+    "excludeFromTotal": false,
+    "walletName": "HDFC",
+    "categories": "global",
+    "archived": false
+  },
+  {
+    "type": "basic",
+    "walletIcon": {
+      "aliasName": "",
+      "iconName": "icon_0",
+      "iconPath": "icons/icon.png",
+      "id": "60b8899af1f6b443bc5af9c1",
+      "index": 149
+    },
+    "currency": {
+      "flag": "INR",
+      "symbol": "₹",
+      "name": "Indian Rupee",
+      "code": "INR"
+    },
+    "openBalance": 0.03,
+    "enableNotification": false,
+    "excludeFromTotal": true,
+    "walletName": "Backup Cash",
+    "categories": "global",
+    "archived": false
+  },
+  {
+    "type": "basic",
+    "walletIcon": {
+      "aliasName": "",
+      "iconName": "icon_0",
+      "iconPath": "icons/icon.png",
+      "id": "60b8899af1f6b443bc5af9c1",
+      "index": 149
+    },
+    "currency": {
+      "flag": "INR",
+      "symbol": "₹",
+      "name": "Indian Rupee",
+      "code": "INR"
+    },
+    "openBalance": 4000000,
+    "enableNotification": false,
+    "excludeFromTotal": true,
+    "walletName": "Archived",
+    "categories": "global",
+    "archived": true
+  }
+]

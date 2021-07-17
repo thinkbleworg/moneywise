@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
@@ -16,6 +15,8 @@ import { useSnackbar } from "notistack";
 import CloseIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
 import { useAuthContext } from "./Auth";
+
+import ButtonLoader from "../utils/ButtonLoader";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,6 +57,8 @@ const SignIn = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [submitLoading, setSubmitLoading] = useState(false);
+
   const displaySnack = (message, variant) => {
     enqueueSnackbar(message, {
       anchorOrigin: {
@@ -78,6 +81,7 @@ const SignIn = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitLoading(true);
     let { fieldName, validateError } = validate({
       email,
       password,
@@ -89,6 +93,7 @@ const SignIn = (props) => {
         handleAuth({ authenticated: true, userObj: user });
         handleSwitchComponent("Authenticated");
         history.push("/");
+        setSubmitLoading(false);
       } catch (e) {
         if (e.code === "UserNotConfirmedException") {
           const resendSignUp = await Auth.resendSignUp(email);
@@ -100,9 +105,11 @@ const SignIn = (props) => {
           // console.log("Error signin", e.message);
           displaySnack(e.message, "error");
         }
+        setSubmitLoading(false);
       }
     } else {
       displaySnack(`Please fill the required field ${fieldName}`, "error");
+      setSubmitLoading(false);
     }
   };
 
@@ -144,15 +151,18 @@ const SignIn = (props) => {
                 autoComplete="current-password"
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="secondary"
+              <ButtonLoader
+                buttonProps={{
+                  type: "submit",
+                  fullWidth: true,
+                  variant: "contained",
+                  color: "secondary",
+                }}
                 className={classes.submit}
+                loading={submitLoading}
               >
                 Sign In
-              </Button>
+              </ButtonLoader>
               <Grid container>
                 <Grid item xs>
                   <Link

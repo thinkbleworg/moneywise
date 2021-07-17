@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 import Link from "@material-ui/core/Link";
@@ -13,6 +12,8 @@ import { validate } from "../../utils/validators";
 import { useSnackbar } from "notistack";
 import CloseIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
+
+import ButtonLoader from "../utils/ButtonLoader";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,6 +57,8 @@ const SignUp = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
+  const [submitLoading, setSubmitLoading] = useState(false);
+
   const displaySnack = (message, variant) => {
     enqueueSnackbar(message, {
       anchorOrigin: {
@@ -78,6 +81,7 @@ const SignUp = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitLoading(true);
     let { fieldName, validateError } = validate({
       firstName,
       lastName,
@@ -103,12 +107,15 @@ const SignUp = (props) => {
           "success"
         );
         handleSwitchComponent("VerifyAccount", { email: email });
+        setSubmitLoading(false);
       } catch (e) {
         displaySnack(e.message, "error");
+        setSubmitLoading(false);
         // console.log("signup error", e.message);
       }
     } else {
       displaySnack(`Please fill the required field ${fieldName}`, "error");
+      setSubmitLoading(false);
     }
   };
 
@@ -178,15 +185,18 @@ const SignUp = (props) => {
                 />
               </Grid>
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="secondary"
+            <ButtonLoader
+              buttonProps={{
+                type: "submit",
+                fullWidth: true,
+                variant: "contained",
+                color: "secondary",
+              }}
               className={classes.submit}
+              loading={submitLoading}
             >
               Sign Up
-            </Button>
+            </ButtonLoader>
             <Grid container justify="center">
               <Grid item>
                 <Link

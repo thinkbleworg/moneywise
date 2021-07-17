@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
@@ -13,6 +12,8 @@ import { validate } from "../../utils/validators";
 import { useSnackbar } from "notistack";
 import CloseIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
+
+import ButtonLoader from "../utils/ButtonLoader";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,6 +50,7 @@ const VerifyAccount = (props) => {
 
   const [confirmationCode, setConfirmationCode] = useState("");
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const [submitLoading, setSubmitLoading] = useState(false);
 
   const displaySnack = (message, variant) => {
     enqueueSnackbar(message, {
@@ -72,6 +74,7 @@ const VerifyAccount = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitLoading(true);
     let { fieldName, validateError } = validate({
       email,
       code: confirmationCode,
@@ -85,12 +88,15 @@ const VerifyAccount = (props) => {
         // console.log("confirm signup success ----", confirmSignUp);
         handleSwitchComponent("SignIn");
         displaySnack("SignUp is successful! Please sign in", "success");
+        setSubmitLoading(false);
       } catch (e) {
         // console.log("confirm signup error", e.message);
         displaySnack(e.message, "error");
+        setSubmitLoading(false);
       }
     } else {
       displaySnack(`Please fill the required field ${fieldName}`, "error");
+      setSubmitLoading(false);
     }
   };
 
@@ -166,15 +172,18 @@ const VerifyAccount = (props) => {
                   </Link>
                 </Grid>
               </Grid>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="secondary"
+              <ButtonLoader
+                buttonProps={{
+                  type: "submit",
+                  fullWidth: true,
+                  variant: "contained",
+                  color: "secondary",
+                }}
                 className={classes.submit}
+                loading={submitLoading}
               >
                 Confirm
-              </Button>
+              </ButtonLoader>
               <Grid container justify="center">
                 <Grid item>
                   <Link

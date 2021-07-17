@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
@@ -13,6 +12,8 @@ import { validate } from "../../utils/validators";
 import { useSnackbar } from "notistack";
 import CloseIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
+
+import ButtonLoader from "../utils/ButtonLoader";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,6 +54,8 @@ const ResetPassword = (props) => {
   const [verificationCode, setVerificationCode] = useState("");
   const [newPassword, setNewPassword] = useState("");
 
+  const [submitLoading, setSubmitLoading] = useState(false);
+
   const displaySnack = (message, variant) => {
     enqueueSnackbar(message, {
       anchorOrigin: {
@@ -75,6 +78,7 @@ const ResetPassword = (props) => {
 
   const handleSendCode = async (e) => {
     e.preventDefault();
+    setSubmitLoading(true);
     let { fieldName, validateError } = validate({
       email,
     });
@@ -84,6 +88,7 @@ const ResetPassword = (props) => {
         // console.log("forgot password send code", forgotPasswordResp);
         setInitialScreen(false);
         displaySnack("Code sent successfully", "success");
+        setSubmitLoading(false);
       } catch (e) {
         if (e.code === "UserNotFoundException") {
           displaySnack("User not found, please sign up!", "error");
@@ -91,14 +96,17 @@ const ResetPassword = (props) => {
           // console.log("Error forgot password send code", e.message);
           displaySnack(e.message, "error");
         }
+        setSubmitLoading(false);
       }
     } else {
       displaySnack(`Please fill the required field ${fieldName}`, "error");
+      setSubmitLoading(false);
     }
   };
 
   const handlePasswordChange = async (e) => {
     e.preventDefault();
+    setSubmitLoading(true);
     let { fieldName, validateError } = validate({
       code: verificationCode,
       password: newPassword,
@@ -116,12 +124,15 @@ const ResetPassword = (props) => {
           "Your password has been resetted successfully! Please Sign in to proceed",
           "success"
         );
+        setSubmitLoading(false);
       } catch (e) {
         // console.log("Error forgotPasswordSubmit", e.message, e.code);
         displaySnack(e.message, "error");
+        setSubmitLoading(false);
       }
     } else {
       displaySnack(`Please fill the required field ${fieldName}`, "error");
+      setSubmitLoading(false);
     }
   };
 
@@ -182,27 +193,33 @@ const ResetPassword = (props) => {
                 </>
               )}
               {initialScreen ? (
-                <Button
-                  type="button"
-                  fullWidth
-                  variant="contained"
-                  color="secondary"
+                <ButtonLoader
+                  buttonProps={{
+                    type: "button",
+                    fullWidth: true,
+                    variant: "contained",
+                    color: "secondary",
+                    onClick: (e) => handleSendCode(e),
+                  }}
                   className={classes.submit}
-                  onClick={handleSendCode}
+                  loading={submitLoading}
                 >
                   Send Code
-                </Button>
+                </ButtonLoader>
               ) : (
-                <Button
-                  type="button"
-                  fullWidth
-                  variant="contained"
-                  color="secondary"
+                <ButtonLoader
+                  buttonProps={{
+                    type: "button",
+                    fullWidth: true,
+                    variant: "contained",
+                    color: "secondary",
+                    onClick: (e) => handlePasswordChange(e),
+                  }}
                   className={classes.submit}
-                  onClick={handlePasswordChange}
+                  loading={submitLoading}
                 >
                   Submit
-                </Button>
+                </ButtonLoader>
               )}
               <Grid container justify="center">
                 <Grid item>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
 import clsx from "clsx";
@@ -6,11 +6,19 @@ import clsx from "clsx";
 import Header from "./components/header/Header";
 import { Routing } from "./routes/Routing";
 import { isHomeRoute } from "./routes/RoutingHelper";
+import { CustomThemeContext } from "./theme/ThemeProvider";
 
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import Switch from "@material-ui/core/Switch";
 
-/****** Sample Datas *****/
+import Amplify, { Auth } from "aws-amplify";
+import awsconfig from "./aws-exports";
+
+import AuthComponent, { AuthenticationProvider } from "./components/auth/Auth";
+
+Amplify.configure(awsconfig);
+// Auth.configure(awsconfig);
 
 const useStyles = makeStyles((theme) => ({
   transactionLayer: {
@@ -59,29 +67,44 @@ function App() {
   const classes = useStyles();
   const homeRoute = isHomeRoute(window.location.pathname);
 
+  const { currentTheme, setTheme } = useContext(CustomThemeContext);
+  const isDark = Boolean(currentTheme === "dark");
+
+  const handleThemeChange = (event) => {
+    const { checked } = event.target;
+    if (checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
   return (
     <div className="App">
       <CssBaseline />
-      <Header />
-
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Container
-          maxWidth="md"
-          className={clsx(
-            classes.container,
-            homeRoute && classes.containerPadLeft
-          )}
-        >
-          <Routing />
-          {/* Sample Transaction - Move to route */}
-          {/* <Paper className={classes.transactionLayer}>
-            
-          </Paper> */}
-        </Container>
-      </main>
+      <AuthenticationProvider>
+        <AuthComponent>
+          <Header />
+          <Switch checked={isDark} onChange={handleThemeChange} />
+          <main className={classes.content}>
+            <div className={classes.toolbar} />
+            <Container
+              maxWidth="md"
+              className={clsx(
+                classes.container,
+                homeRoute && classes.containerPadLeft
+              )}
+            >
+              <Routing />
+            </Container>
+          </main>
+        </AuthComponent>
+      </AuthenticationProvider>
     </div>
   );
 }
 
 export default App;
+
+// References
+// Theming - https://www.58bits.com/blog/2020/05/27/material-ui-theme-switcher-react

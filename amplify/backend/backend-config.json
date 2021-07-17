@@ -1,6 +1,6 @@
 {
   "auth": {
-    "moneywisebc81d8cb": {
+    "moneywise2472f9f82472f9f8": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

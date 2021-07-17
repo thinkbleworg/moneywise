@@ -66,8 +66,6 @@ const menuUI = (menuObj) => {
 };
 
 const TransactionHeader = (props) => {
-  console.log("transaction header props", props);
-
   const classes = useStyles();
 
   const [viewBy, setViewBy] = useState("category");

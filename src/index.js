@@ -6,29 +6,27 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider as ReduxProvider } from "react-redux";
 import configureStore from "./redux/store/configureStore";
 import { BrowserRouter } from "react-router-dom";
-import Amplify, { Auth } from "aws-amplify";
-import awsconfig from "./aws-exports";
-import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
+import CustomThemeProvider from "./theme/ThemeProvider";
+import { SnackbarProvider } from "notistack";
 
-Amplify.configure(awsconfig);
-Auth.configure(awsconfig);
-
-const RootApp = () => {
+const Root = () => {
   const reduxStore = configureStore();
   return (
-    <ReduxProvider store={reduxStore}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </ReduxProvider>
+    <CustomThemeProvider>
+      <SnackbarProvider hideIconVariant={true}>
+        <ReduxProvider store={reduxStore}>
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        </ReduxProvider>
+      </SnackbarProvider>
+    </CustomThemeProvider>
   );
 };
 
-const RootAppWithAuth = withAuthenticator(RootApp);
-
 ReactDOM.render(
   <BrowserRouter>
-    <RootAppWithAuth />
+    <Root />
   </BrowserRouter>,
   document.querySelector("#root")
 );

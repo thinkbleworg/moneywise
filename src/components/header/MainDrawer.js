@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import IconButton from "@material-ui/core/IconButton";
+import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -16,6 +17,8 @@ import CategoryIcon from "@material-ui/icons/Category";
 
 import { Link } from "react-router-dom";
 import { Routes } from "../../routes/Routing";
+
+import SignOut from "../auth/SignOut";
 
 const useStyles = makeStyles((theme) => ({
   drawerHeader: {
@@ -130,6 +133,7 @@ const MainDrawer = (props) => {
         <IconButton onClick={handleDrawerClose}>
           <ChevronLeftIcon />
         </IconButton>
+        <SignOut />
       </div>
       <Divider />
       {mainDrawerListUI()}

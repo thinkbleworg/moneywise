@@ -89,7 +89,6 @@ const AddCategoryForm = ({
   const [parentCategory, setParentCategory] = useState("");
 
   const handleSubmitCategoryForm = (event) => {
-    console.log("event preventing ----", event);
     event.preventDefault();
     let walletObj = wallets.find((w) => w.walletName === wallet.displayName);
 
@@ -100,7 +99,7 @@ const AddCategoryForm = ({
       wallet: walletObj,
       parentCategory: parentCategory,
     };
-    console.log("categoryObj ----", categoryObj);
+    // console.log("categoryObj ----", categoryObj);
     props.handleSaveDialog();
   };
 

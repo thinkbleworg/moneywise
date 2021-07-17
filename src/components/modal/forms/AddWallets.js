@@ -99,7 +99,6 @@ const AddWalletForm = ({
   const [openWalletIconDialog, setOpenWalletIconDialog] = useState(false);
 
   const handleSubmitWalletForm = (event) => {
-    console.log("event preventing ----", event);
     event.preventDefault();
     const walletObj = {
       type: type,
@@ -111,7 +110,7 @@ const AddWalletForm = ({
       excludeFromTotal: excludeFromTotal,
       categories: categories,
     };
-    console.log("walletObj ----", walletObj);
+    // console.log("walletObj ----", walletObj);
     props.handleSaveDialog();
   };
 

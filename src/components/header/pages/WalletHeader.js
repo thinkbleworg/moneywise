@@ -46,8 +46,6 @@ const menuUI = (menuObj) => {
 };
 
 const TransactionHeader = (props) => {
-  console.log("transaction header props", props);
-
   const classes = useStyles();
 
   const [openAddWalletDialog, setOpenAddWalletDialog] = useState(false);
@@ -61,7 +59,6 @@ const TransactionHeader = (props) => {
   };
 
   const handleSaveAddWalletDialog = (event) => {
-    console.log("event ----", event);
     handleCloseAddWalletDialog();
   };
 

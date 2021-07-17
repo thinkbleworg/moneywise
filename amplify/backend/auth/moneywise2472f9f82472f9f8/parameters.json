@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "moneywisebc81d8cb_identitypool_bc81d8cb",
+    "identityPoolName": "moneywise2472f9f8_identitypool_2472f9f8",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "moneywbc81d8cb",
-    "userPoolName": "moneywisebc81d8cb_userpool_bc81d8cb",
+    "resourceNameTruncated": "moneyw2472f9f8",
+    "userPoolName": "moneywise2472f9f8_userpool_2472f9f8",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -12,26 +12,29 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Your verification code",
+    "emailVerificationSubject": "Verification Code for Money Wise App",
     "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-        "email"
+        "email",
+        "name"
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
-        "email"
+        "email",
+        "name"
     ],
     "userpoolClientReadAttributes": [
-        "email"
+        "email",
+        "name"
     ],
-    "userpoolClientLambdaRole": "moneywbc81d8cb_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
-    "sharedId": "bc81d8cb",
-    "resourceName": "moneywisebc81d8cb",
+    "userpoolClientLambdaRole": "moneyw2472f9f8_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": true,
+    "sharedId": "2472f9f8",
+    "resourceName": "moneywise2472f9f82472f9f8",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -45,12 +48,22 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
+    "useDefault": "manual",
+    "thirdPartyAuth": false,
     "usernameAttributes": [
         "email"
     ],
+    "userPoolGroups": false,
+    "adminQueries": true,
+    "triggers": "{}",
+    "hostedUI": false,
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "breakCircularDependency": true,
+    "permissions": [],
     "dependsOn": []
 }
